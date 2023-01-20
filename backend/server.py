@@ -9,12 +9,12 @@ from bitcoin_timestamp import BitcoinTimestamp
 from custom_util import get_live_bitcoin_price, convert_date_to_text
 from database_connection import DatabaseConnection
 
-# TODO (3.1): define FastAPI app
+#define FastAPI app
 app = FastAPI()
 # TODO (5.4.1): define database connection
 
 
-# TODO (3.2): add CORS middleware
+#  add CORS middleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=CORS_URLS,
@@ -23,8 +23,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
-# TODO (3.1)
 """
 a index function to test if server is running
 """

@@ -4,7 +4,6 @@ from constants import DATABASE_NAME, TABLE_NAME, BITCOIN_CURRENT_PRICE_URL
 from datetime import datetime
 import requests
 
-# TODO (5.1) 
 def get_live_bitcoin_price():
     """
     gets live price of bitcoin from bitcoin open API

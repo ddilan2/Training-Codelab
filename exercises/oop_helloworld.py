@@ -1,7 +1,7 @@
 # create your class here
 
 class Car:
-    def __init__(self, model, speed):
+    def __init__(self, model: str, speed: float):
         self.model = model
         self.speed = speed
 
