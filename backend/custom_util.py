@@ -14,7 +14,24 @@ def get_live_bitcoin_price():
     :rtype:
         float
     """
-    pass
+    url = BITCOIN_CURRENT_PRICE_URL
+
+    # make get request to bitcoin current price API
+    response = requests.get(url)
+
+    # check if respons status code is 200
+    if response.status_code == 200:
+
+        # convert response body to JSON
+        data = response.json()
+
+        #convert price from string to float
+        price = data['bpi']['USD']['rate'].replace(',', '')
+        return float(price)
+
+    # otherwise, print error code
+    else:
+        return -1
 
 def create_database():
     """
@@ -77,3 +94,7 @@ def convert_date_to_text(date: datetime):
 
 if __name__ == '__main__':
     create_database()
+
+    #test get_live_bitcoin_price()
+    price = get_live_bitcoin_price()
+    print(price)
