@@ -12,7 +12,6 @@ import styles from "./TimeCurrencyCard.module.css"
     list[{dict}]
 */
 function TimeCurrencyCard ({currency,showData}) {
-    // ToDo 10.2.1
     /* 
     set price text color
     :index:
@@ -25,9 +24,15 @@ function TimeCurrencyCard ({currency,showData}) {
         CSS  Object
     */
     const priceColor = (index) => {
+        if (index == 0 || showData[index]['price'] == showData[index-1]['price']) {
+            return styles.priceContainerEqual
+        } else if (showData[index]['price'] > showData[index-1]['price']) {
+            return styles.priceContainerUp
+        } else {
+            return styles.priceContainerDown
+        }
     }
 
-    // ToDo 10.2.2
     /* 
     set arrow sign for price
     :index:
@@ -40,19 +45,29 @@ function TimeCurrencyCard ({currency,showData}) {
         string
     */
     const arrowSign = (index) => {
+        if (index == 0 || showData[index]['price'] == showData[index-1]['price']) {
+            return '-'
+        } else if (showData[index]['price'] > showData[index-1]['price']) {
+            return '↑'
+        } else {
+            return '↓'
+        }
     }
     
-    // ToDo 10.2.3
     return (
-        <>
+        <div className={styles.center}>
         {/* reference for .map https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map */}
             {showData.map((d, index) => (
-                <>
-                {/* use {currency === 'USD' ? "$" : *other currency sign*} to set the currency notation  
-                reference https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator */}
-                </>
+                <div className={styles.cardContainer}>
+                    <div className={styles.timeContainer}>
+                        {d['timestamp']}
+                        <div className={priceColor(index)}>
+                            {d['price']}{currency === 'USD' ? "$ " : "€ "}{arrowSign(index)}
+                        </div>
+                    </div>
+                </div>
             ))} 
-        </>      
+        </div>      
     );
 
 }
