@@ -55,14 +55,21 @@ function TimeCurrencyCard ({currency,showData}) {
     }
     
     return (
-        <div className={styles.center}>
+        <div>
         {/* reference for .map https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map */}
+        <div className={styles.header}>
+            <div className={styles.rowElement1}>&emsp; &emsp; Time</div>
+            <div className={styles.rowElement2}>Price of BTC in {currency}</div>
+        </div>
+        <div className={styles.cardContainer}></div>
             {showData.map((d, index) => (
                 <div className={styles.cardContainer}>
                     <div className={styles.timeContainer}>
-                        {d['timestamp']}
+                        <div className={styles.timestamp}>
+                            {d['timestamp']}
+                        </div>
                         <div className={priceColor(index)}>
-                            {d['price']}{currency === 'USD' ? "$ " : "€ "}{arrowSign(index)}
+                            {currency === 'USD' ? "$" : "€"}{d['price']}{" "}{arrowSign(index)}
                         </div>
                     </div>
                 </div>

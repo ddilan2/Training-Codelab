@@ -76,11 +76,12 @@ function Home () {
   // call CurrencyButton and TimeCurrencyCard pass the variables
   return (
     <div>
- 
-      {currency}
-       <CurrencyButton currency={currency} changeCurrency={changeCurrency}/>
+      <div className={styles.header}>
+        {'Currency: ' + currency}
+        <CurrencyButton currency={currency} changeCurrency={changeCurrency}/>
+        
+       </div>
        <TimeCurrencyCard currency={currency} showData={showData}/>
-
   </div>
   );
 

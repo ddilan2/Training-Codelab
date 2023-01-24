@@ -1,31 +1,72 @@
 .cardContainer {
     background-color: turquoise;
     text-align: center;
-
+    padding: 16px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
 }
 
 .priceContainerUp {
+    text-align: right;
     color: green;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .priceContainerDown {
+    text-align: right;
     color: red;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .priceContainerEqual {
-    color: gold;
+    text-align: right;
+    color: darkblue;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .timeContainer {
-    width: 300px;
+    width: 500px;
     height: 50px;
     background-color: thistle;
     padding: 16px;
     text-align: center;
-    display: inline-block;
+    display: table;
     text-align: left;
+    border-radius: 25px;
+    margin-top: 2%;
 }
 
-.center {
+.timestamp {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.header {
+    background-color: tan;
+    position: fixed;
+    width: 100%;
+    display: table;
+    margin-top: 52px;
+    font-weight: bold;
     text-align: center;
+}
+
+.rowElement1 {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+    padding-right: 100px;
+    width: 10px;
+}
+
+.rowElement2 {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+    padding-left: 120px;
+    width: 10px;
 }
