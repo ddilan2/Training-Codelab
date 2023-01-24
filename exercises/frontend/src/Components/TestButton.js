@@ -14,12 +14,14 @@ function TestButton ({chosen,changeChosen}) {
   return (
     <div className={styles.bodyContainer}>
         
-          <button onClick={()=>changeChosen("Button 1")} >
+          <button onClick={()=>changeChosen("Button 1")}
+            className={chosen === 'Button 1' ? styles.currencyButtonActive : styles.currencyButtonDefault} >
             Button 1
           </button>
           
         
-          <button onClick={()=>changeChosen("Button 2")} >
+          <button onClick={()=>changeChosen("Button 2")}
+            className={chosen === 'Button 2' ? styles.currencyButtonActive : styles.currencyButtonDefault} >
             Button 2
           </button>
           
